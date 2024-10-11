@@ -1,0 +1,225 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+.carta-matty {
+  font-family: 'Indie Flower';
+}
+
+
+html {
+    background-image: url("069001f908fe34f04934ffc86c39a6d3.jpg");
+    background-size:cover;
+}
+
+.botao_amor {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.281);
+    padding: 20px;
+    border-radius: 100%;
+    flex-wrap: wrap;
+}
+.con-like {
+    --red: rgb(248, 61, 176);
+    position: relative;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .con-like .like {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 20;
+    cursor: pointer;
+  }
+  
+  .con-like .checkmark {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .con-like .outline,
+  .con-like .filled {
+    fill: var(--red);
+    position: absolute;
+  }
+  
+  .con-like .filled {
+    animation: kfr-filled 0.5s;
+    display: none;
+  }
+  
+  .con-like .celebrate {
+    position: absolute;
+    animation: kfr-celebrate 0.5s;
+    animation-fill-mode: forwards;
+    display: none;
+  }
+  
+  .con-like .poly {
+    stroke: var(--red);
+    fill: var(--red);
+  }
+  
+  .con-like .like:checked ~ .checkmark .filled {
+    display: block
+  }
+  
+  .con-like .like:checked ~ .checkmark .celebrate {
+    display: block
+  }
+  
+  @keyframes kfr-filled {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  
+  @keyframes kfr-celebrate {
+    0% {
+      transform: scale(0);
+    }
+  
+    50% {
+      opacity: 0.8;
+    }
+  
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  .flip-container {
+    perspective: 1000px;
+  }
+  
+  .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+  .flip-container,
+  .front,
+  .back {
+    width: 320px;
+    height: 480px;
+  }
+  .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  .front,
+  .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .front {
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+  .back {
+    transform: rotateY(180deg);
+  }
+
+  :root {
+    --bg-color: #fff;
+    --margin-line-color: #ec7063;
+    --ruling-line-color: #85c1e9;
+  }
+  
+  *, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .ruled-paper {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ruled-paper .ruled-paper-header {
+    background-image: linear-gradient(90deg, transparent 29px, var(--margin-line-color) 29px, var(--margin-line-color) 31px, transparent 31px);
+    background-size: 100% 1.2em;
+    flex-grow: 1;
+  }
+  
+  .ruled-paper .ruled-paper-body {
+    background-image: linear-gradient(90deg, transparent 29px, var(--margin-line-color) 29px, var(--margin-line-color) 31px, transparent 31px), linear-gradient(var(--ruling-line-color) .1em, transparent .1em);
+    background-size: 100% 1.2em;
+    flex-grow: 8;
+    padding-top: .2rem;
+    padding-left: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .titulo_pagina {
+    background-color: rgba(148, 143, 143, 0.267);
+    border-radius: 10px;
+    backdrop-filter: blur(1px);
+}
+
+.title-word {
+    animation: color-animation 4s linear infinite;
+  }
+  
+  .title-word-1 {
+    --color-1: #FF3EA5;
+    --color-2: #FF7ED4;
+    --color-3: #FFB5DA;
+  }
+  
+  .title-word-2 {
+    --color-1: #E26EE5;
+    --color-2: #7E30E1;
+    --color-3: #49108B;
+  }
+  
+  .title-word-3 {
+    --color-1: #C738BD;
+    --color-2: #E49BFF;
+    --color-3: #850F8D;
+  }
+  
+  .title-word-4 {
+    --color-1: #B60071;
+    --color-2: #E4003A;
+    --color-3: #EB5B00;
+  }
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+  
+  .title {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 8.5vw;
+    text-transform: uppercase;
+  }
